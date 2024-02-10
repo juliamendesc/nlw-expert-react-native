@@ -4,6 +4,8 @@
 
 This is a simple order food app that allows users to order food from a restaurant. The app allows users to see the restaurant menu, see a product detail, add product items to their cart, manage their order in the cart and place an order.
 
+![GIF with demonstration of final product](https://github.com/juliamendesc/nlw-expert-react-native/github/demo.gif)
+
 ## Technologies 👩‍💻
 
 The app is built using [React Native](https://reactnative.dev/), [Nativewind](https://www.nativewind.dev/) / [Tailwindcss](https://tailwindcss.com/) for styling, [Expo](https://expo.dev/) for app emulating devices, [Zustand](https://zustand-demo.pmnd.rs/) for state persistance, and is integrated with whatsapp API for order submission.
