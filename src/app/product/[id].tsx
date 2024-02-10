@@ -6,6 +6,7 @@ import { Button } from '@/components/button';
 import { Feather } from '@expo/vector-icons';
 import { LinkButton } from '@/components/link-button';
 import { useCartStore } from '@/stores/cart-store';
+import { Redirect } from 'expo-router';
 
 export default function ProductDetails() {
 	const cartStore = useCartStore();
@@ -14,13 +15,13 @@ export default function ProductDetails() {
 
 	const product = PRODUCTS.find((product) => product.id === id);
 
-	if (!product) return;
+	if (!product) return <Redirect href='/' />;
 
 	function handleAddToCart() {
-		if (!product) return;
-
-		cartStore.addProduct(product);
-		navigation.goBack();
+		if (product) {
+			cartStore.addProduct(product);
+			navigation.goBack();
+		}
 	}
 
 	return (
@@ -32,9 +33,7 @@ export default function ProductDetails() {
 			/>
 
 			<View className='p-5 mt-8 flex-1'>
-				<Text className='text-lime-100 font-heading text-bold text-xl'>
-					{product.title}
-				</Text>
+				<Text className='text-white font-heading text-xl'>{product.title}</Text>
 				<Text className='text-lime-400 font-heading text-2xl my-2'>
 					{formatCurrency(product.price)}
 				</Text>
