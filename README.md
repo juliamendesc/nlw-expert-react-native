@@ -4,7 +4,9 @@
 
 This is a simple order food app that allows users to order food from a restaurant. The app allows users to see the restaurant menu, see a product detail, add product items to their cart, manage their order in the cart and place an order.
 
-![GIF with demonstration of final product](https://github.com/juliamendesc/nlw-expert-react-native/github/demo.gif)
+<div align="center">
+<img src="https://raw.githubusercontent.com/juliamendesc/nlw-expert-react-native/main/.github/demo.gif" />
+</div>
 
 ## Technologies 👩‍💻
 
