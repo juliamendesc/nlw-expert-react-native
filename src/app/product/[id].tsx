@@ -19,7 +19,7 @@ export default function ProductDetails() {
 
 	function handleAddToCart() {
 		if (product) {
-			cartStore.addProduct(product);
+			cartStore.addProductItem(product);
 			navigation.goBack();
 		}
 	}

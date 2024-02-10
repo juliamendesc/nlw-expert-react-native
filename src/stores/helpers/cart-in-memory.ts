@@ -26,31 +26,22 @@ export function addProduct(
 	];
 }
 
-export function removeProduct(
-	products: ProductCartProps[],
-	selectedProduct: ProductProps,
-) {
-	const existingProduct = products.find(
-		(product) => product.id === selectedProduct.id,
+export function removeProduct(products: ProductCartProps[], productId: string) {
+	const updatedProducts = products.map((product) =>
+		product.id === productId
+			? {
+					...product,
+					quantity: product.quantity > 1 ? product.quantity - 1 : 0,
+			  }
+			: product,
 	);
 
-	if (existingProduct) {
-		if (existingProduct.quantity === 1) {
-			return products.filter((product) => product.id !== selectedProduct.id);
-		}
+	return updatedProducts.filter((product) => product.quantity > 0);
+}
 
-		return products.map((product) =>
-			product.id === selectedProduct.id
-				? { ...product, quantity: product.quantity - 1 }
-				: product,
-		);
-	}
-
-	return [
-		...products,
-		{
-			...selectedProduct,
-			quantity: 1,
-		},
-	];
+export function removeProductById(
+	products: ProductCartProps[],
+	productId: string,
+) {
+	return products.filter((product) => product.id !== productId);
 }
